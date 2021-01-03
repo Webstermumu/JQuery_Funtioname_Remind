@@ -1,0 +1,3 @@
+# JQuery_Funtioname_Remind
+工具类_解决VS Code使用时新建js文件没有jq方法的提醒
+把文件添加到新建立的js文件同级目录中即可
