@@ -1,24 +1,20 @@
-$(function () {
-  let layer = layui.layer;
-  getUserInfo();
+let layer = layui.layer;
+let form = layui.form;
+getUserInfo();
 
-  // 退出功能
-  $("#logoutBtn").click(function () {
-    console.log(1);
-    layer.confirm(
-      "确定退出登录?",
-      { icon: 3, title: "提 示" },
-      function (index) {
-        localStorage.removeItem("token");
-        location.href = "login.html";
-        layer.close(index); // 关闭当前询问框
-      }
-    );
+// 退出功能
+$("#logoutBtn").click(function () {
+  // console.log(1);
+  layer.confirm("确定退出登录?", { icon: 3, title: "提 示" }, function (index) {
+    localStorage.removeItem("token");
+    location.href = "login.html";
+    layer.close(index); // 关闭当前询问框
   });
 });
+
 //ajax通讯
 function getUserInfo() {
-  console.log(localStorage.getItem("token"));
+  // console.log(localStorage.getItem("token"));
   $.ajax({
     url: "/my/userinfo",
     //   headers: {
